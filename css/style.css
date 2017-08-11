@@ -102,6 +102,7 @@ a {
   color: rgba(0, 0, 0, 0.9); 
   z-index: 2;
   position: relative;
+  font-size: 30px;
 }
 
 span {
@@ -224,6 +225,10 @@ img {
   .footer {
     font-size: 25px;
     margin: 5% 0;
+  }
+
+  a {
+    font-size: 40px;
   }
 }
 
