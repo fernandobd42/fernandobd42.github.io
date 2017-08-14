@@ -36,7 +36,7 @@ canvas {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50px;
   padding: 2%;
-  margin: 10% 25%;
+  margin: 10% 20%;
   text-align: center;
   opacity: 1;
   box-shadow: 0.3px 0.3px 0px #000;
@@ -121,6 +121,9 @@ img {
 
 /* Larger than mobile */
 @media (min-width: 400px) {
+  .main {
+    margin: 10% 25%;
+  }
 }
 
 /* Larger than phablet */
