@@ -36,7 +36,7 @@ canvas {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50px;
   padding: 2%;
-  margin: 10% 20%;
+  margin: 10% 25%;
   text-align: center;
   opacity: 1;
   box-shadow: 0.3px 0.3px 0px #000;
@@ -54,7 +54,7 @@ canvas {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50px;
   padding: 2%;
-  margin: 3% 15%;
+  margin: 3% 10%;
   text-align: center;
   box-shadow: 0.3px 0.3px 1px #000;
   transition: background-color 1s ease-in-out;
@@ -71,7 +71,6 @@ canvas {
   display: flex;
   justify-content: center;
   width: 100%;
-  bottom: 0;
   position: fixed;
   bottom: 3%
 }
@@ -122,22 +121,18 @@ img {
 
 /* Larger than mobile */
 @media (min-width: 400px) {
-  .main {
-    margin: 15% 25%;
-  }
 }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
+  .main {
+    margin: 10% 30%;
+  }
 }
 
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-  .main {
-    margin: 10% 30%;
-  }
-
   .cursor {
     font-size: 25px;
   }
@@ -158,6 +153,10 @@ img {
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
+  .main {
+    margin: 10% 35%;
+  }
+
   strong {
     font-size: 2rem;
   }
