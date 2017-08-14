@@ -112,8 +112,8 @@ particlesJS("particles-js", {
 	var message = {
 
 		message: [
-      'Software Developer',
       'Software Engineering Student',
+      'Web Developer',
 		],
 		counterS: 0,
 		counterL: 0,
