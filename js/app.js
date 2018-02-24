@@ -1,4 +1,4 @@
-particlesJS("particles-js", {
+let particle = {
   "particles": {
     "number": {
       "value": 75,
@@ -106,7 +106,7 @@ particlesJS("particles-js", {
     }
   },
   "retina_detect": true
-});
+};
 
 (function() {
 	var message = {
@@ -153,11 +153,13 @@ particlesJS("particles-js", {
 
   let loader = document.querySelector(".loader")
   let container = document.querySelector(".container")
+  let scripts = document.querySelector(".scripts")
 
   this.setTimeout(_ => {
     message.init();
     loader.style.display = "none"
     container.style.display = "block"
+    particlesJS("particles-js", particle)
 
   }, 2000)
 })();
