@@ -150,5 +150,14 @@ particlesJS("particles-js", {
 			setTimeout(function(){that.type()}, speed);
 		}
 	};
-	message.init();
+
+  let loader = document.querySelector(".loader")
+  let container = document.querySelector(".container")
+
+  this.setTimeout(_ => {
+    message.init();
+    loader.style.display = "none"
+    container.style.display = "block"
+
+  }, 2000)
 })();

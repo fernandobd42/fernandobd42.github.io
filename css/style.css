@@ -1,5 +1,8 @@
-html {
-  height: 100vh;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; 
 }
 
 body {
@@ -9,6 +12,9 @@ body {
   font-family: Roboto, 'Varela Round', sans-serif;
   margin: 0px;
   color: rgba(0, 0, 0, 0.7);
+  display: flex;  
+  justify-content: center;
+  align-items: center;
 }
 
 video {
@@ -26,18 +32,27 @@ video {
 }
 
 canvas {
-  height: 100vh;
+  left: 0;
+  top: 0;
+  height: 100vh !important;
+  width: 100vw !important;
   position: fixed;
-  top: 0px;
   z-index: 1;
+}
+
+.container, .row {
+  min-height: 80%;
+}
+
+.container {
+  display: none;
 }
 
 .main {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50px;
-  padding: 2%;
-  margin: 10% 20% 5% 20%;
   text-align: center;
+  padding: 5% 5%;
   opacity: 1;
   box-shadow: 0.3px 0.3px 0px #000;
 }
@@ -50,12 +65,11 @@ canvas {
   animation: blink 0.7s infinite;
 }
 
-.icons {
-  background: rgba(255, 255, 255, 0.7);
+.icones {
+  background: rgba(255, 255, 255, 0.7) !important;
   border-radius: 50px;
-  padding: 2%;
-  margin: 3% 10%;
   text-align: center;
+  margin-bottom: 10%;
   box-shadow: 0.3px 0.3px 1px #000;
   transition: background-color 1s ease-in-out;
   -webkit-transition: background-color 1s ease-in-out;
@@ -63,11 +77,12 @@ canvas {
   -o-transition: background-color 1s ease-in-out;
 }
 
-.icons:hover {
-  background: rgba(0, 0, 0, 0.5)
+.icones:hover {
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
 .footer {
+  left: 0;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -78,7 +93,30 @@ canvas {
 
 .link {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text {
+  font-weight: bold;
+}
+
+.loader {
+  color: #fff;
+  font-family: Consolas, Menlo, Monaco, monospace;
+  font-weight: bold;
+  font-size: 30vh;
+  opacity: 0.8;
+  display: block
+}
+
+label {
+  display: inline-block;
+  animation: pulse 0.4s alternate infinite ease-in-out;
+
+}
+
+label:nth-child(odd) {
+  animation-delay: 0.4s;
 }
 
 strong {
@@ -86,9 +124,9 @@ strong {
 }
 
 a {
-  text-decoration: none;;
+  text-decoration: none;
   margin: 0 10px;
-  color: rgba(0, 0, 0, 0.9); 
+  color: rgba(0, 0, 0, 0.9) !important; 
   z-index: 2;
   position: relative;
   font-size: 30px;
@@ -99,7 +137,7 @@ a {
 }
 
 a:hover {
-  color: rgba(255, 255, 255, 0.9); 
+  color: rgba(255, 255, 255, 0.9) !important; 
 }
 
 span {
@@ -122,103 +160,51 @@ img {
 
 /* Larger than mobile */
 @media (min-width: 400px) {
-  .main {
-    margin: 10% 25%;
-  }
 }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
   .main {
-    margin: 10% 30%;
+    padding: 5% 5%;
   }
 }
 
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-  .cursor {
-    font-size: 25px;
+  img {
+    width: 150px;
+    height: 200px;
   }
 
   strong {
     font-size: 2rem;
   }
 
-  span {
-    font-size: 1.2rem
-  }
-
-  img {
-    width: 150px;
-    height: 200px;
+  .text {
+    font-size: 1.25rem;
   }
 }
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
-  .main {
-    margin: 10% 35%;
-  }
-
-  strong {
-    font-size: 2rem;
-  }
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1250px) {
-  .main {
-    margin: 7% 35%;
-    padding: 1%;
-  }
-
-  .icons {
-    margin: 4% 20%;
-  }
-
-  strong {
-    font-size: 2rem;
-  }
-
-  img {
-    width: 150px;
-    height: 200px;
-  }
 }
 
 /* ipad/ipad pro */
 @media (min-height: 1300px) {
-  .main {
-    margin: 20% 25%
-  }
 }
 
 /* ULTRABOOK */
 @media (min-width: 1250px ) {
-  @media(max-height: 800px) {
-    .main {
-      margin: 4% 30%
-    }
-  }
 }
 
 
 /* Larger than Desktop FullHD */
 @media (min-width: 1500px) {
-  .main {
-    margin: 5% 35%;
-    padding: 1%;
-  }
-
-  .icons {
-    margin: 8% 20%;
-    padding: 1%;
-  }
-
-  a {
-    font-size: 40px;
-  }
 }
 
 /* Largest */
@@ -242,4 +228,11 @@ img {
   0% {opacity: 1;}
   50% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
 }
