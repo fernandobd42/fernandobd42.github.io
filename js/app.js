@@ -155,11 +155,18 @@ let particle = {
   let container = document.querySelector(".container")
   let scripts = document.querySelector(".scripts")
 
-  this.setTimeout(_ => {
-    message.init();
+  message.init()
+  
+  if (window.innerWidth > 800) {
+    this.setTimeout(_ => {
+      loader.style.display = "none"
+      container.style.display = "block"
+      particlesJS("particles-js", particle)
+  
+    }, 2000)
+  } else {
     loader.style.display = "none"
     container.style.display = "block"
     particlesJS("particles-js", particle)
-
-  }, 2000)
+  }
 })();
