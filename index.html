@@ -38,7 +38,7 @@
      
       <div class="main col-10 col-sm-8 col-md-6 col-lg-5 mb-5">
 
-        <img src="./assets/img-min.png" width="5" height="300"/>
+        <img class="core-img" src="./assets/img-min.png" width="5" height="300"/>
         
         <h1>
           <strong>Fernando Gontijo</Strong> 
@@ -51,10 +51,10 @@
     </section>
 
     <section class="icones py-3 mt-5">
-      <a href="https://www.linkedin.com/in/fernando-gontijo-013303122/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-      <a href="https://github.com/fernandobd42/" target="_blank"><i class="fa fa-github"></i></a>
-      <a href="https://www.facebook.com/fernandobd69" target="_blank"><i class="fa fa-facebook-square"></i></a>
-      <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8217962E8" target="_blank"><i class="fa fa-file-text-o"></i></a>
+      <a class="icone-linkedin" href="https://www.linkedin.com/in/fernandogontijo/" target="_blank"><img class="logo" src="./assets/logos/linkedin.png"/></a>
+      <a class="icone-github" href="https://github.com/fernandobd42/" target="_blank"><img src="./assets/logos/github.png"/></a>
+      <a class="icone-facebook" href="https://www.facebook.com/fernandobd69/" target="_blank"><img src="./assets/logos/facebook.png"/></a>
+      <a class="icone-instagram" href="https://www.instagram.com/fernandogontijo_/" target="_blank"><img src="./assets/logos/instagram.png"/></a>
     </section>
 
     <section class="footer">
@@ -62,9 +62,13 @@
     </section>
   </div>
 
-  <div class="loader">
-    <label>{</label><label>}</label>
+    <!-- Preloader Start -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
   </div>
+  <!-- Preloader End -->
 
   <script type="text/javascript" src="./js/particles.min.js"></script>
   <script type="text/javascript" src="./js/app.min.js"></script>

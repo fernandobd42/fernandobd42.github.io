@@ -151,22 +151,14 @@ let particle = {
 		}
 	};
 
-  let loader = document.querySelector(".loader")
+  let loader = document.querySelector("#loader-wrapper")
   let container = document.querySelector(".container")
-  let scripts = document.querySelector(".scripts")
 
   message.init()
   
-  if (window.innerWidth > 800) {
-    this.setTimeout(_ => {
-      loader.style.display = "none"
-      container.style.display = "block"
-      particlesJS("particles-js", particle)
-  
-    }, 2000)
-  } else {
+  setTimeout(() => {
     loader.style.display = "none"
     container.style.display = "block"
     particlesJS("particles-js", particle)
-  }
+  }, 750)
 })();

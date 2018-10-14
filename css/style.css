@@ -71,14 +71,18 @@ canvas {
   text-align: center;
   margin-bottom: 10%;
   box-shadow: 0.3px 0.3px 1px #000;
-  transition: background-color 1s ease-in-out;
-  -webkit-transition: background-color 1s ease-in-out;
-  -moz-transition: background-color 1s ease-in-out;
-  -o-transition: background-color 1s ease-in-out;
 }
 
-.icones:hover {
-  background: rgba(0, 0, 0, 0.5) !important;
+.icone-linkedin, .icone-github, .icone-facebook, .icone-instagram {
+  filter: blur(1px) grayscale(1);
+  transition: filter .5s ease-in-out;
+  -webkit-transition: filter .5s ease-in-out;
+  -moz-transition: filter .5s ease-in-out;
+  -o-transition: filter .5s ease-in-out; 
+}
+
+.icone-linkedin:hover, .icone-github:hover, .icone-facebook:hover, .icone-instagram:hover {
+  filter:  blur(0) grayscale(0);
 }
 
 .footer {
@@ -100,19 +104,9 @@ canvas {
   font-weight: bold;
 }
 
-.loader {
-  color: #fff;
-  font-family: Consolas, Menlo, Monaco, monospace;
-  font-weight: bold;
-  font-size: 30vh;
-  opacity: 0.8;
-  display: block
-}
-
 label {
   display: inline-block;
   animation: pulse 0.4s alternate infinite ease-in-out;
-
 }
 
 label:nth-child(odd) {
@@ -124,16 +118,9 @@ strong {
 }
 
 a {
-  text-decoration: none;
   margin: 0 10px;
-  color: rgba(0, 0, 0, 0.9) !important; 
   z-index: 2;
   position: relative;
-  font-size: 30px;
-  transition: color 1s ease-in-out;
-  -webkit-transition: color 1s ease-in-out;
-  -moz-transition: color 1s ease-in-out;
-  -o-transition: color 1s ease-in-out; 
 }
 
 a:hover {
@@ -147,13 +134,118 @@ span {
   justify-content: center;
 }
 
-img {
+.core-img {
   width: 75px;
   height: 125px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
 }
 
+#loader-wrapper {
+  background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.4s ease-out 0s;
+  width: 100%;
+  z-index: 1000;
+}
+#loader {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  animation: 2s linear 0s normal none infinite running spin;
+  border-color: #969696 transparent transparent;
+  border-image: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  display: block;
+  height: 80px;
+  left: 50%;
+  margin: -40px 0 0 -40px;
+  position: relative;
+  top: 50%;
+  width: 80px;
+  z-index: 1001;
+}
+#loader::before {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  animation: 3s linear 0s normal none infinite running spin;
+  border-color: #9f9f9f transparent transparent;
+  border-image: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  bottom: 5px;
+  content: "";
+  left: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+#loader::after {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  animation: 1.5s linear 0s normal none infinite running spin;
+  border-color: #c6c6c6 transparent transparent;
+  border-image: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  bottom: 15px;
+  content: "";
+  left: 15px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#loader-wrapper .loader-section {
+  background: #fff none repeat scroll 0 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 51%;
+  z-index: 1000;
+}
+#loader-wrapper .loader-section.section-left {
+  display: none;
+  left: 0;
+}
+#loader-wrapper .loader-section.section-right {
+  display: none;
+  right: 0;
+}
+.loaded #loader-wrapper .loader-section.section-left {
+  background: transparent none repeat scroll 0 0;
+  transition: all 0.9s ease-out 0s;
+}
+.loaded #loader-wrapper .loader-section.section-right {
+  background: transparent none repeat scroll 0 0;
+  transition: all 0.9s ease-out 0s;
+}
+.loaded #loader {
+  opacity: 0;
+}
+.loaded #loader-wrapper {
+  background: transparent none repeat scroll 0 0;
+  visibility: hidden;
+}
 
 /* Mobile first queries */
 
@@ -172,7 +264,7 @@ img {
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-  img {
+  .core-img {
     width: 150px;
     height: 200px;
   }
