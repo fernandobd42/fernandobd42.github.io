@@ -75,10 +75,10 @@ canvas {
 
 .icone-linkedin, .icone-github, .icone-facebook, .icone-instagram {
   filter: blur(1px) grayscale(1);
-  transition: all .5s ease-in-out;
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out; 
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out; 
 }
 
 .icone-linkedin:hover, .icone-github:hover, .icone-facebook:hover, .icone-instagram:hover {
@@ -86,10 +86,10 @@ canvas {
 }
 
 a > img {
-  transition: all .5s ease-in-out;
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out; 
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out; 
 }
 
 a:hover > img {
